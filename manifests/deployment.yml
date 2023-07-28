@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: suchidotnetdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suchidotnetdemo
+  template:
+    metadata:
+      labels:
+        app: suchidotnetdemo 
+    spec:
+      containers:
+        - name: suchidotnetdemo 
+          image: containreg111.azurecr.io/suchidotnetdemo
+          ports:
+          - containerPort: 5000
